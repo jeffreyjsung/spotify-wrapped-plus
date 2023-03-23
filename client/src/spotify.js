@@ -15,14 +15,6 @@ const LOCALSTORAGE_VALUES = {
 };
 
 /**
- * Axios global request headers
- * https://github.com/axios/axios#global-axios-defaults
- */
-axios.defaults.baseURL = 'https://api.spotify.com/v1';
-axios.defaults.headers['Authorization'] = `Bearer ${accessToken}`;
-axios.defaults.headers['Content-Type'] = 'application/json';
-
-/**
  * Checks if the amount of time that has elapsed between the timestamp in localStorage
  * and now is greater than the expiration time of 3600 seconds (1 hour).
  * @returns {boolean} Whether or not the access token in localStorage has expired
@@ -112,6 +104,14 @@ const getAccessToken = () => {
 };
 
 export const accessToken = getAccessToken();
+
+/**
+ * Axios global request headers
+ * https://github.com/axios/axios#global-axios-defaults
+ */
+axios.defaults.baseURL = 'https://api.spotify.com/v1';
+axios.defaults.headers['Authorization'] = `Bearer ${accessToken}`;
+axios.defaults.headers['Content-Type'] = 'application/json';
 
 /**
  * Get Current User's Profile
