@@ -114,8 +114,48 @@ axios.defaults.headers['Authorization'] = `Bearer ${accessToken}`;
 axios.defaults.headers['Content-Type'] = 'application/json';
 
 /**
- * Get Current User's Profile
- * https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-current-users-profile
+ * Get current user's profile
+ * https://developer.spotify.com/documentation/web-api/reference/#/operations/endpoint-get-current-users-profile
  * @returns {Promise}
  */
-export const getCurrentUserProfile = () => axios.get('/me');
+export const getProfile = () => axios.get('/me');
+
+/**
+ * Get a list of current user's playlists
+ * https://developer.spotify.com/documentation/web-api/reference/#/operations/get-a-list-of-current-users-playlists
+ * @returns {Promise}
+ */
+export const getPlaylists = (limit = 40) => {
+  return axios.get(`/me/playlists?limit=${limit}`);
+};
+
+/**
+ * Get current user's top artists
+ * https://developer.spotify.com/documentation/web-api/reference/#/operations/get-users-top-artists-and-tracks
+ * @param {int} limit - number of items to fetch
+ * @param {string} time_range - 'short_term' (last 4 weeks) 'medium_term' (last 6 months) or 'long_term' (calculated from several years of data and including all new data as it becomes available). Defaults to 'short_term'
+ * @returns {Promise}
+ */
+export const getTopArtists = (limit = 40, time_range = 'short_term') => {
+  return axios.get(`/me/top/artists?limit=${limit}&time_range=${time_range}`);
+};
+
+/**
+ * Get current user's top tracks
+ * https://developer.spotify.com/documentation/web-api/reference/#/operations/get-users-top-artists-and-tracks
+ * @param {int} limit - number of items to fetch
+ * @param {string} time_range - 'short_term' (last 4 weeks) 'medium_term' (last 6 months) or 'long_term' (calculated from several years of data and including all new data as it becomes available). Defaults to 'short_term'
+ * @returns {Promise}
+ */
+export const getTopTracks = (limit = 40, time_range = 'short_term') => {
+  return axios.get(`/me/top/tracks?limit=${limit}&time_range=${time_range}`);
+};
+
+/**
+ * Get a list of current user's recently played tracks
+ * https://developer.spotify.com/documentation/web-api/reference/#/operations/get-recently-played
+ * @returns {Promise}
+ */
+export const getRecentlyPlayedTracks = (limit = 40) => {
+  return axios.get(`/me/player/recently-played?limit=${limit}`);
+};
