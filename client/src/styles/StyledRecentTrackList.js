@@ -18,7 +18,7 @@ const StyledRecentTrackList = styled.ul`
     cursor: default;
 
     @media (min-width: 768px) {
-      grid-template-columns: 84px 4fr 2fr minmax(60px, 1fr);
+      grid-template-columns: 80px 4fr 2fr minmax(60px, 1fr);
       padding: var(--spacing-xs) var(--spacing-sm);
     }
 

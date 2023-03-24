@@ -37,6 +37,6 @@ export const formatDateTime = datetime => {
   const days = (timeElapsed / (1000 * 60 * 60 * 24)).toFixed(1);
   if (seconds < 60) return Math.floor(seconds) + " sec ago";
   else if (minutes < 60) return Math.floor(minutes) + " min ago";
-  else if (hours < 24) return Math.floor(hours) + " hrs ago";
-  else return Math.floor(days) + " days ago"
+  else if (hours < 24) return Math.floor(hours) + " hr ago";
+  else return Math.floor(days) + " day ago"
 }

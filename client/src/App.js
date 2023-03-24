@@ -8,7 +8,7 @@ import {
   useLocation
 } from "react-router-dom";
 import { GlobalStyle } from './styles';
-import { Login, Profile, TopArtists, TopTracks } from './pages';
+import { Login, Profile, RecentlyPlayedTracks, TopArtists, TopTracks } from './pages';
 import styled from 'styled-components/macro';
 
 const StyledLogoutButton = styled.button`
@@ -73,6 +73,7 @@ function App() {
                 <Route path="/top-tracks" element={<TopTracks />}></Route>
                 <Route path="/playlists/:id" element={<h1>Playlist</h1>}></Route>
                 <Route path="/playlists" element={<h1>Playlists</h1>}></Route>
+                <Route path="/recent-tracks" element={<RecentlyPlayedTracks />}></Route>
                 <Route path="/" element={<Profile />}> 
                 </Route>
               </Routes>
