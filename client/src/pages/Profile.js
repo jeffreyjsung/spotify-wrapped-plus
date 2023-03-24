@@ -12,7 +12,8 @@ import {
   ArtistsGrid,
   TrackList,
   PlaylistsGrid,
-  RecentTrackList
+  RecentTrackList,
+  Loader
 } from '../components';
 import { StyledHeader } from '../styles';
 
@@ -65,7 +66,7 @@ const Profile = () => {
             </div>
           </StyledHeader>
 
-          {topArtists && topTracks && playlists && recentlyPlayedTracks && (
+          {topArtists && topTracks && playlists && recentlyPlayedTracks ? (
             <main>
               <SectionWrapper title="Top artists this month" seeAllLink="/top-artists">
                 <ArtistsGrid artists={topArtists.items.slice(0, 10)} />
@@ -83,6 +84,8 @@ const Profile = () => {
                 <RecentTrackList items={recentlyPlayedTracks.items.slice(0, 10)} />
               </SectionWrapper>
             </main>
+          ) : (
+            <Loader />
           )}
         </>
       )}
