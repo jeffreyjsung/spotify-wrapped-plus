@@ -9,10 +9,15 @@ const TrackList = ({ tracks }) => (
           <li className="track__item" key={i}>
             <div className="track__item__num">{i + 1}</div>
             <div className="track__item__title-group">
-              {track.album.images.length && track.album.images[2] && (
+              {track.is_local ? (
                 <div className="track__item__img">
-                  <img src={track.album.images[2].url} alt={track.name} />
+                  <img src="../unknown.jpeg" alt={track.name} />
                 </div>
+              ) :
+                track.album.images.length && track.album.images[2] && (
+                  <div className="track__item__img">
+                    <img src={track.album.images[2].url} alt={track.name} />
+                  </div>
               )}
               <div className="track__item__name-artist">
                 <div className="track__item__name overflow-ellipsis">

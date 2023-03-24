@@ -44,8 +44,6 @@ const Profile = () => {
     catchErrors(fetchData());
    }, []);
 
-   console.log(recentlyPlayedTracks)
-
   return (
     <>
       {profile && (

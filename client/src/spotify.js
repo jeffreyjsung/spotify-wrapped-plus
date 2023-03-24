@@ -159,3 +159,23 @@ export const getTopTracks = (limit = 40, time_range = 'short_term') => {
 export const getRecentlyPlayedTracks = (limit = 40) => {
   return axios.get(`/me/player/recently-played?limit=${limit}`);
 };
+
+/**
+ * Get a user's playlist
+ * https://developer.spotify.com/documentation/web-api/reference/#/operations/get-playlist
+ * @param {string} playlist_id - The Spotify ID for the playlist.
+ * @returns {Promise}
+ */
+export const getPlaylistById = playlist_id => {
+  return axios.get(`/playlists/${playlist_id}`);
+}
+
+/**
+ * Get audio features for several tracks
+ * https://developer.spotify.com/documentation/web-api/reference/#/operations/get-several-audio-features
+ * @param {string} ids - A comma-separated list of the Spotify IDs for the tracks
+ * @returns {Promise}
+ */
+export const getAudioFeaturesForTracks = ids => {
+  return axios.get(`/audio-features?ids=${ids}`);
+};
