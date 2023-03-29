@@ -4,8 +4,6 @@ This is a web app that allows you to visualize your Spotify listening history, s
 
 If you would like to try out the app yourself, please get into contact with me and I would be happy to grant you access. Spotify only lets explictly added users to access third-party apps. Read more about it [here](https://developer.spotify.com/community/news/2021/05/27/improving-the-developer-and-user-experience-for-third-party-apps/).
 
-Hosted at https://spotify-wrapped.herokuapp.com/.
-
 ## Local Installation & Set Up
 
 1. Register a Spotify App in your [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/) and add `http://localhost:8888/callback` as a Redirect URI in the app settings
