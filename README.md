@@ -2,7 +2,7 @@
 
 This is a web app that allows you to visualize your Spotify listening history, statistics, and habits. It is similar to Spotify's "Wrapped" feature, except you can use this any time.
 
-If you would like to try out the app yourself, please get into contact with me and I would be happy to grant you access. Spotify only lets explictly added users to access third-party apps. Read more about it [here](https://developer.spotify.com/community/news/2021/05/27/improving-the-developer-and-user-experience-for-third-party-apps/).
+This is unfortunately not hosted anywhere at the moment because Spotify only lets explictly added users to access third-party apps. Read more about it [here](https://developer.spotify.com/community/news/2021/05/27/improving-the-developer-and-user-experience-for-third-party-apps/).
 
 ## Local Installation & Set Up
 
